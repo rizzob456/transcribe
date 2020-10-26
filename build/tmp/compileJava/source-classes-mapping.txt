@@ -1,0 +1,24 @@
+transcribe/TranscriptionItemAlternativesDTO.java
+ transcribe.TranscriptionItemAlternativesDTO
+transcribe/EmailItem.java
+ transcribe.EmailItem
+transcribe/TranscriptionResponseDTO.java
+ transcribe.TranscriptionResponseDTO
+transcribe/TranscriptionTextDTO.java
+ transcribe.TranscriptionTextDTO
+transcribe/TranscriptionResultDTO.java
+ transcribe.TranscriptionResultDTO
+transcribe/TranscriptionItemDTO.java
+ transcribe.TranscriptionItemDTO
+transcribe/Transcribe.java
+ transcribe.Transcribe
+transcribe/Util.java
+ transcribe.Util
+transcribe/EmailService.java
+ transcribe.EmailService
+transcribe/Constants.java
+ transcribe.Constants
+transcribe/DataService.java
+ transcribe.DataService
+transcribe/Handler.java
+ transcribe.Handler
