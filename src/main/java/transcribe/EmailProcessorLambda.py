@@ -5,6 +5,9 @@ from botocore.exceptions import ClientError
 
 def lambda_handler(event, context):
 
+	S3BucketName='sanjay-transcribe-new'
+	DynamoRegion='us-east-1'
+	
     transcribe_client = boto3.client('transcribe')
     
     workmail = boto3.client('workmailmessageflow')
@@ -33,8 +36,8 @@ def lambda_handler(event, context):
                 print("extension : " + extension)
                 newKey = msg_id+""+extension
                 s3 = boto3.client('s3')
-                s3.create_bucket(Bucket="sanjay-transcribe-new")
-                s3.put_object(Body=part.get_payload(decode=True), Bucket="sanjay-transcribe-new", Key=newKey)
+                s3.create_bucket(Bucket=S3BucketName)
+                s3.put_object(Body=part.get_payload(decode=True), Bucket=S3BucketName, Key=newKey)
    
                 put_item(fileName, fromAdd, newKey)
                 
@@ -53,7 +56,7 @@ def lambda_handler(event, context):
     #print(parsed_msg)
 
 def put_item(fileName, email, msgId):
-    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+    dynamodb = boto3.resource('dynamodb', region_name=DynamoRegion)
     table = dynamodb.Table('Transcribes')
     response = table.put_item(
        Item={
@@ -65,7 +68,7 @@ def put_item(fileName, email, msgId):
     return response
  
 def get_item(msgId):
-    dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
+    dynamodb = boto3.resource('dynamodb', region_name=DynamoRegion)
     table = dynamodb.Table('Transcribes')
     try:
         response = table.get_item(Key={'MSG_ID': msgId})
@@ -81,7 +84,7 @@ def transcribe_file(job_name, file_uri, transcribe_client):
         Media={'MediaFileUri': file_uri},
         MediaFormat='wav',
         LanguageCode='en-US',
-        OutputBucketName='sanjay-transcribe-new'
+        OutputBucketName=S3BucketName
     )
 
     max_tries = 60
