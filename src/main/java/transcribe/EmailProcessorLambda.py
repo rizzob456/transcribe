@@ -5,8 +5,8 @@ from botocore.exceptions import ClientError
 
 def lambda_handler(event, context):
 
-	S3BucketName='sanjay-transcribe-new'
-	DynamoRegion='us-east-1'
+	S3BucketName='bucket_name'
+	DynamoRegion='region'#us-east-1
 	
     transcribe_client = boto3.client('transcribe')
     
