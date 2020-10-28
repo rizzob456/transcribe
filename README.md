@@ -1,5 +1,5 @@
- Install Gradle (optionally Maven) and Java8
- Clone the repo 
+1. Install Gradle (optionally Maven) and Java8
+2. Clone the repo 
  Create a user in WorkMail assign an email address like user@abc.awsapps.com
  Create a Lambda function (from the code EmailProcessorLambda.py) with Python 3.8 Runtime
  Modify S3BucketName and DynamoRegion properties in the function accordingly
