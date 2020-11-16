@@ -1,4 +1,4 @@
-1. Install Gradle (optionally Maven) and Java8
+1. Install AWS CLI, Gradle (optionally Maven) and Java8
 2. Clone the repo 
 3. Create a user in WorkMail assign an email address like user@abc.awsapps.com
 4. Create a Lambda function (from the code EmailProcessorLambda.py) with Python 3.8 Runtime
