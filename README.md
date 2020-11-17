@@ -1,4 +1,4 @@
-WARNING: Strictly PoC ONLY. Not production-ready.
+WARNING: Purpose - PoC ONLY. Not production-ready.
 
 1. Install AWS CLI, Gradle (optionally Maven) and Java8
 2. Clone the repo 
